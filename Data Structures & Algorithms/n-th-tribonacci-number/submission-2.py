@@ -1,0 +1,12 @@
+class Solution:
+    def tribonacci(self, n: int) -> int:
+        if n < 3:
+            arr = [0] * 3
+        else:
+            arr = [0] * (n+1)
+        arr[0], arr[1], arr[2] = 0, 1, 1
+        if n < 3:
+            return arr[n]
+        for i in range(3, n+1):
+            arr[i] = arr[i-1] + arr[i-2] + arr[i-3]
+        return arr[n]
